@@ -17,6 +17,15 @@ server03
 server04
 edge01
 
+[exits]
+exit01
+exit02
+
+[network:children]
+leafs
+spines
+servers
+
 [mcast-source]
 edge01
 
