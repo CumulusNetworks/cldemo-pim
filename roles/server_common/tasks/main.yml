@@ -7,7 +7,7 @@
 
 - name: Download setuptools
   get_url: >
-    url=https://bootstrap.pypa.io/ez_setup.py dest=/home/vagrant/ez_setup.py
+    url=https://bootstrap.pypa.io/ez_setup.py dest=/tmp/ez_setup.py
   when: not setuptools.stat.exists
 
 - name: Install setuptools
