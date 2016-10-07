@@ -11,7 +11,7 @@
   when: not setuptools.stat.exists
 
 - name: Install setuptools
-  shell: python ez_setup.py
+  shell: python /tmp/ez_setup.py
   when: not setuptools.stat.exists
 
 # Using apt to install the older ifupdown2
