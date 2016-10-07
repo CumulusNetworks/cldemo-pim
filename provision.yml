@@ -6,7 +6,7 @@
   tasks:
     - name: Copy /etc/network/interfaces
       copy:
-        src: /{{ansible_hostname}}/files/interfaces
+        src: /roles/{{ansible_hostname}}/files/interfaces
         dest: /etc/network/interfaces
       notify: reload networking
 
@@ -21,13 +21,13 @@
   tasks:
     - name: Copy /etc/network/interfaces
       copy:
-        src: /{{ansible_hostname}}/files/interfaces
+        src: /roles/{{ansible_hostname}}/files/interfaces
         dest: /etc/network/interfaces
       notify: reload networking
 
     - name: Copy Quagga Configuration
       copy:
-        src: /{{ansible_hostname}}/files/Quagga.conf.j2
+        src: /{{ansible_hostname}}/files/Quagga.conf
         dest: /etc/quagga/Quagga.conf
       notify: reload quagga
 
@@ -43,13 +43,13 @@
   tasks:
     - name: Copy /etc/network/interfaces
       copy:
-        src: /{{ansible_hostname}}/files/interfaces
+        src: /roles/{{ansible_hostname}}/files/interfaces
         dest: /etc/network/interfaces
       notify: reload networking
 
     - name: Copy Quagga Configuration
       copy:
-        src: /{{ansible_hostname}}/files/Quagga.conf.j2
+        src: /roles/{{ansible_hostname}}/files/Quagga.conf
         dest: /etc/quagga/Quagga.conf
       notify: reload quagga
 
