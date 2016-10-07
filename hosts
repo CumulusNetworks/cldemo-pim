@@ -24,7 +24,6 @@ exit02
 [network:children]
 leafs
 spines
-exits
 
 [mcast-source]
 edge01
