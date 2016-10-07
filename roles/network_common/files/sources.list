@@ -1,0 +1,14 @@
+deb     http://repo3.cumulusnetworks.com/repo CumulusLinux-3 cumulus upstream
+deb-src http://repo3.cumulusnetworks.com/repo CumulusLinux-3 cumulus upstream
+
+deb     http://repo3.cumulusnetworks.com/repo CumulusLinux-3-security-updates cumulus upstream
+deb-src http://repo3.cumulusnetworks.com/repo CumulusLinux-3-security-updates cumulus upstream
+
+deb     http://repo3.cumulusnetworks.com/repo CumulusLinux-3-updates cumulus upstream
+deb-src http://repo3.cumulusnetworks.com/repo CumulusLinux-3-updates cumulus upstream
+
+deb     http://repo3.cumulusnetworks.com/repo CumulusLinux-3-early-access cumulus
+deb-src http://repo3.cumulusnetworks.com/repo CumulusLinux-3-early-access cumulus
+
+# Currently under construction
+#deb     http://community.cumulusnetworks.com/repo CumulusLinux-3-marketplace commercial community

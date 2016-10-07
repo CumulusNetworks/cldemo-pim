@@ -1,0 +1,58 @@
+---
+- hosts: servers
+  become: yes
+  roles:
+    - server_common
+  tasks:
+    - name: Copy /etc/network/interfaces
+      copy:
+        src: /{{ansible_hostname}}/files/interfaces
+        dest: /etc/network/interfaces
+      notify: reload networking
+
+  handlers:
+    - include: handlers/main.yml
+      static: yes
+
+- hosts: spines
+  become: yes
+  roles:
+    - network_common
+  tasks:
+    - name: Copy /etc/network/interfaces
+      copy:
+        src: /{{ansible_hostname}}/files/interfaces
+        dest: /etc/network/interfaces
+      notify: reload networking
+
+    - name: Copy Quagga Configuration
+      copy:
+        src: /{{ansible_hostname}}/files/Quagga.conf.j2
+        dest: /etc/quagga/Quagga.conf
+      notify: reload quagga
+
+  handlers:
+    - include: handlers/main.yml
+      static: yes
+
+- hosts: leafs
+  become: yes
+  roles:
+    - network_common
+
+  tasks:
+    - name: Copy /etc/network/interfaces
+      copy:
+        src: /{{ansible_hostname}}/files/interfaces
+        dest: /etc/network/interfaces
+      notify: reload networking
+
+    - name: Copy Quagga Configuration
+      copy:
+        src: /{{ansible_hostname}}/files/Quagga.conf.j2
+        dest: /etc/quagga/Quagga.conf
+      notify: reload quagga
+
+  handlers:
+    - include: handlers/main.yml
+      static: yes

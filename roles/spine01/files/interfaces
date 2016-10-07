@@ -1,0 +1,39 @@
+
+auto lo
+iface lo inet loopback
+    address 10.0.0.21/32
+
+auto eth0
+iface eth0 inet dhcp
+
+
+# downlinks
+auto swp1
+iface swp1
+    alias to Leaf01
+    address 10.1.0.0/31
+
+auto swp2
+iface swp2
+    alias to Leaf02
+    address 10.1.0.4/31
+
+auto swp3
+iface swp3
+    alias to Leaf03
+    address 10.1.0.8/31
+
+auto swp4
+iface swp4
+    alias to Leaf04
+    address 10.1.0.12/31
+
+auto swp29
+iface swp29
+    alias to exit01
+    address 10.1.0.16/31
+
+auto swp30
+iface swp30
+    alias to exit02
+    address 10.1.0.20/31

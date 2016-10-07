@@ -1,0 +1,30 @@
+
+auto lo
+iface lo inet loopback
+    address 10.0.0.22/32
+
+auto eth0
+iface eth0 inet dhcp
+
+#######
+##
+## Interfaces not enabled on spine2
+## for 3.1 PIM demo, as PIM ECMP is not yet supported
+##
+#######
+# downlinks
+#auto swp1
+#iface swp1
+#    address 10.1.0.2/31
+#
+#auto swp2
+#iface swp2
+#    address 10.1.0.6/31
+#
+#auto swp3
+#iface swp3
+#    address 10.1.0.10/31
+#
+#auto swp4
+#iface swp4
+#    address 10.1.0.14/31

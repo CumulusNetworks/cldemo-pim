@@ -1,0 +1,37 @@
+---
+- name: Verify we are running 3.1.0
+  fail:
+    msg: >
+      "Cumulus Linux version is not 3.1.0,
+      EA feature may not be supported"
+  when: ansible_lsb.release != "3.1.0"
+
+- name: Copy updated sources.list
+  copy:
+    src: sources.list
+    dest: /etc/apt/sources.list
+  register: update_cache
+
+- name: Update Cache (PIMd)
+  apt:
+    update_cache: yes
+  when: update_cache.changed
+
+- name: Install cumulus-pim
+  apt:
+    name: cumulus-pim
+    state: present
+  register: installed_pim
+
+# Manual command is required since packages are downgraded.
+# Aptitude gets grumpy about this
+- name: Run Apt Upgrade to install PIM Quagga
+  command: apt-get upgrade --force-yes -qq warn=no
+  when: installed_pim.changed
+
+- name: Copy Quagga daemons file
+  copy:
+    src: daemons
+    dest: /etc/quagga/daemons
+  notify: restart quagga
+  when: installed_pim.changed
