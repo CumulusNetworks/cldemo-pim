@@ -17,11 +17,16 @@ iface swp52
     address 10.1.0.7/31
 
 
-# bridge to hosts
-auto swp2
-iface swp2
+# Host facing ports disabled.
+# Server01 and Server02 are single homed
+# to Leaf01 for the 1.0 release.
+# This will change with PIM mLAG support
 
-auto br0
-iface br0
-     bridge-ports swp2
-     address 172.16.2.1/24
+# bridge to hosts
+# auto swp2
+# iface swp2
+#
+# auto br0
+# iface br0
+#      bridge-ports swp2
+#      address 172.16.2.1/24
