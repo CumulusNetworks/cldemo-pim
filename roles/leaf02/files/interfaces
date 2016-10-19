@@ -21,6 +21,7 @@ iface swp52
 # Server01 and Server02 are single homed
 # to Leaf01 for the 1.0 release.
 # This will change with PIM mLAG support
+# Don't forget to add Quagga config!
 
 # bridge to hosts
 # auto swp2
