@@ -2,9 +2,9 @@
 - name: Copy mcast source script
   copy:
     src: mcast-tx.py
-    dest: ~/
+    dest: /home/cumulus/mcast-tx.py
 
 - name: Copy mcast receiver script
   copy:
     src: mcast-rx.py
-    dest: ~/
+    dest: /home/cumulus/mcast-rx.py
