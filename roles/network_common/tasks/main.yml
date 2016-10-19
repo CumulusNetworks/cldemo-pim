@@ -1,8 +1,8 @@
 ---
-- name: Verify we are running 3.1.0
+- name: Verify we are running Cumulus Linux 3.1.0 or later
   fail:
     msg: >
-      "Cumulus Linux version is not 3.1.0,
+      "Cumulus Linux version is not 3.1.0 or later,
       EA feature may not be supported"
   when: ansible_lsb.release[:3]|float >= "3.1"
 
