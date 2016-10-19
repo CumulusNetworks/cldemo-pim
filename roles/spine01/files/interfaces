@@ -28,12 +28,12 @@ iface swp4
     alias to Leaf04
     address 10.1.0.12/31
 
-auto swp29
-iface swp29
+auto swp30
+iface swp30
     alias to exit01
     address 10.1.0.16/31
 
-auto swp30
-iface swp30
+auto swp29
+iface swp29
     alias to exit02
     address 10.1.0.20/31
