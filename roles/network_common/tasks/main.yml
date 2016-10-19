@@ -4,7 +4,7 @@
     msg: >
       "Cumulus Linux version is not 3.1.0,
       EA feature may not be supported"
-  when: ansible_lsb.release != "3.1.0"
+  when: ansible_lsb.release[:3]|float >= "3.1"
 
 - name: Copy updated sources.list
   copy:
