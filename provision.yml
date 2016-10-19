@@ -1,18 +1,18 @@
 ---
-# - hosts: servers
-#   become: yes
-#   roles:
-#     - server_common
-#   tasks:
-#     - name: Copy /etc/network/interfaces
-#       copy:
-#         src: roles/{{ansible_hostname}}/files/interfaces
-#         dest: /etc/network/interfaces
-#       notify: reload networking
+- hosts: servers
+  become: yes
+  roles:
+    - server_common
+  tasks:
+    - name: Copy /etc/network/interfaces
+      copy:
+        src: roles/{{ansible_hostname}}/files/interfaces
+        dest: /etc/network/interfaces
+      notify: reboot
 
-#   handlers:
-#     - include: handlers/main.yml
-#       static: yes
+  handlers:
+    - include: handlers/main.yml
+      static: yes
 
 - hosts: network
   become: yes

@@ -11,3 +11,6 @@
   service:
     name: quagga
     state: reloaded
+
+- name: reboot
+  shell: "shutdown -r 0 now"
