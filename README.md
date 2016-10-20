@@ -8,14 +8,14 @@ This demo is built using the Cumulus [reference topology](https://github.com/Cum
 
 Quickstart
 ------------------------
-git clone https://github.com/cumulusnetworks/cldemo-vagrant
-cd cldemo-vagrant
-vagrant up
-vagrant ssh oob-mgmt-server
-sudo su - cumulus
-git clone <URL>
-cd cldemo-pim
-ansible-playbook provision.yml
+* git clone https://github.com/cumulusnetworks/cldemo-vagrant
+* cd cldemo-vagrant
+* vagrant up
+* vagrant ssh oob-mgmt-server
+* sudo su - cumulus
+* git clone <URL>
+* cd cldemo-pim
+* ansible-playbook provision.yml
 
 Details
 ------------------------
