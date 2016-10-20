@@ -4,7 +4,7 @@ This demo will demonstrate how to configure and use PIM on Cumulus Linux.
 
 This demo is built using the Cumulus [reference topology](https://github.com/CumulusNetworks/cldemo-vagrant). Please visit the reference topology github page for detailed instructions on using Cumulus Vx with Vagrant
 
-![Diagram](diagram.png)
+![Diagram](topology.png)
 
 Quickstart
 ------------------------
