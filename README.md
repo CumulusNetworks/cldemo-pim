@@ -13,7 +13,7 @@ Quickstart
 * vagrant up
 * vagrant ssh oob-mgmt-server
 * sudo su - cumulus
-* git clone <URL>
+* git clone https://github.com/cumulusnetworks/cldemo-pim
 * cd cldemo-pim
 * ansible-playbook provision.yml
 
