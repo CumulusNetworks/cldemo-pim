@@ -45,3 +45,5 @@ spine01 ports swp29 and swp30 are swapped.  spine01 is connected to exit01 on po
 ECMP is not currently supported and a number of links have been disabled to simplify the environment.
 
 PIM with mLAG is not currently supported. No dual attached servers are configured.
+
+As each server is provisioned the first time with Ansible, the server will reboot, causing Ansible to report a failure. This is expected behavior and is only seen the first time the servers are provisioned.
