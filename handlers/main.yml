@@ -13,4 +13,8 @@
     state: reloaded
 
 - name: reboot
-  shell: "shutdown -r 0 now"
+  shell: sleep 1 && shutdown -r 0
+  poll: 0
+  async: 1
+  when: reboot.changed
+  ignore_errors: yes
