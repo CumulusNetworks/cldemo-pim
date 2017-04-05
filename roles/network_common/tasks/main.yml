@@ -11,4 +11,3 @@
     src: daemons
     dest: /etc/quagga/daemons
   notify: restart quagga
-  when: installed_pim.changed

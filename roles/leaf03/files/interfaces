@@ -21,7 +21,7 @@ iface swp52
 auto swp1
 iface swp1
 
-auto br0
-iface br0
+auto bridge
+iface bridge
      bridge-ports swp1
      address 172.16.3.1/24
