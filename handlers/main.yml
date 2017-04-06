@@ -11,9 +11,3 @@
   service:
     name: quagga
     state: reloaded
-
-- name: reboot
-  shell: sleep 1 && shutdown -r 0
-  poll: 0
-  async: 1
-  ignore_errors: yes
