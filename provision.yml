@@ -1,19 +1,4 @@
 ---
-- hosts: servers
-  become: yes
-  roles:
-    - server_common
-  tasks:
-    - name: Copy /etc/network/interfaces
-      copy:
-        src: roles/{{ansible_hostname}}/files/interfaces
-        dest: /etc/network/interfaces
-      notify: reboot
-
-  handlers:
-    - include: handlers/main.yml
-      static: yes
-
 - hosts: network
   become: yes
   roles:
@@ -34,3 +19,22 @@
   handlers:
     - include: handlers/main.yml
       static: yes
+
+- hosts: servers
+  become: yes
+  roles:
+    - server_common
+  tasks:
+    - name: Copy /etc/network/interfaces
+      copy:
+        src: roles/{{ansible_hostname}}/files/interfaces
+        dest: /etc/network/interfaces
+      register: reboot
+
+    - name: reboot
+      shell: sleep 1 && shutdown -r 0
+      poll: 0
+      async: 1
+      when: reboot.changed
+      ignore_errors: yes
+
