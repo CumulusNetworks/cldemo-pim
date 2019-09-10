@@ -1,13 +1,13 @@
 ---
-- name: restart quagga
+- name: restart frr
   service:
-    name: quagga
+    name: frr
     state: restarted
 
 - name: reload networking
   shell: "ifreload -a"
 
-- name: reload quagga
+- name: reload frr
   service:
-    name: quagga
+    name: frr
     state: reloaded

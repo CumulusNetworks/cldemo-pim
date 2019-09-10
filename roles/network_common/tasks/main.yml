@@ -6,8 +6,8 @@
       PIM may not be supported"
   when: ansible_lsb.release[:3]|float >= "3.2"
 
-- name: Copy Quagga daemons file
+- name: Copy frr daemons file
   copy:
     src: daemons
-    dest: /etc/quagga/daemons
-  notify: restart quagga
+    dest: /etc/frr/daemons
+  notify: restart frr
